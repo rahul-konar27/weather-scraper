@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Ajax</title>
+        <script type = "text/javascript" src="jquery.min.js"></script>
+
+
+        <style type = "text/css">
+
+            .circle{
+                width : 150px;
+                height : 150px;
+                border-radius : 50%; 
+                background-color: green;
+                margin-bottom: 50px;
+            }
+
+            .square{
+                width: 150px;
+                height: 150px;
+                margin-bottom: 50px;
+                background-color: red;
+            }
+            
+            
+            
+
+            
+        </style>
+    </head>
+    <body>
+        <p>Hi there</p>
+        <button id="text">Click</button>
+        <div class = "circle"></div>
+        <div class= "square"></div>
+        <div class= "square"></div>
+        <script type="text/javascript">
+           
+            $.ajax("info.txt").done(function (data) {
+
+                $("p").html(data)
+            }).fail(function() {
+
+                alert("Sorry couldn't get data")
+
+            });
+
+        
+
+        </script>
+    </body>
+</html>
